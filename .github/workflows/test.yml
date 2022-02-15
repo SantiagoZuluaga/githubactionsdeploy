@@ -1,7 +1,0 @@
-name: Deploy react build to heroku in testing server
-
-on:
-  push:
-    branches: [testing]
-
-jobs:
