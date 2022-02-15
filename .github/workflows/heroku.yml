@@ -14,21 +14,3 @@ jobs:
       - name: Extract branch name
     shell: bash
     run: echo "::set-output name=branch::$(echo ${GITHUB_REF#refs/heads/})"
-  deploy-testing:
-    needs: build 
-    runs-on: ubuntu-latest
-    if: ${{ needs.build.outputs.branch == 'testing' }}
-    env: 
-      REACT_APP_NODE_ENV: "TESTING"
-    steps:
-    - shell: bash
-      run: echo REACT_APP_NODE_ENV
-  deploy-production:
-    needs: build 
-    runs-on: ubuntu-latest
-    if: ${{ needs.build.outputs.branch == 'production' }}
-    env: 
-      REACT_APP_NODE_ENV: "PRODUCTION"
-    steps:
-    - shell: bash
-      run: echo REACT_APP_NODE_ENV
