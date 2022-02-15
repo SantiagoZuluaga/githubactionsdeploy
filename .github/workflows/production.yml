@@ -1,0 +1,7 @@
+name: Deploy react build to heroku in production server
+
+on:
+  push:
+    branches: [production]
+
+jobs:
