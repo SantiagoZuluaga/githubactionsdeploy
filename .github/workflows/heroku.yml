@@ -1,11 +1,11 @@
-name: Deploy react build to heroku in production server
+name: Generate react build folder to deploy in heroku
 
 on:
   push:
     branches: [production, testing]
 
 jobs:
- build:
+  build:
     runs-on: ubuntu-latest
     outputs:
       branch: ${{ steps.extract_branch.outputs.branch }}
